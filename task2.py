@@ -57,11 +57,9 @@ ax3.imshow(g, cmap = 'Greens')
 ax4.imshow(b, cmap = 'Blues')
 plt.show()
 
-#to find U, sigma and V for red 
+#to find U, sigma and V of red, green and blue matrix.
 Ur, Sr, Vr = sp.linalg.svd(r) 
-#to find U, sigma and V for green 
 Ug, Sg, Vg = sp.linalg.svd(g) 
-#U, sigma and V for blue 
 Ub, Sb, Vb = sp.linalg.svd(b) 
 
 #check the none zero elements in sigma of red, green and blue matrices
