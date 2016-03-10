@@ -1,5 +1,11 @@
 import numpy as np
 
+#find omega
+def omegasearch(A,D):
+    K = np.linalg.inv(D).dot(D-A)
+    eig = max(np.linalg.eigvals(K));
+    omega = 2*(1-np.sqrt(1-eig**2))/eig**2
+    return omega;
 
 def LUdecomp(A):
        n=len(A)
@@ -11,13 +17,6 @@ def LUdecomp(A):
                 A[i, k] = lam
         return A
 
-#find omega
-def omegasearch(A,D):
-    K = np.linalg.inv(D).dot(D-A)
-    eig = max(np.linalg.eigvals(K));
-    omega = 2*(1-np.sqrt(1-eig**2))/eig**2
-    return omega;
-    
 def lu(A, b):
       A=LUdecomp(A)
       n = len(A)
