@@ -30,7 +30,7 @@ def image_svd(n):
     img[:,:,1]= g_new
     img[:,:,2]= b_new
 
-    #Use to plot the images
+    #Use to plot the new images
     fig2 = plt.figure(n)
     ax1 = fig2.add_subplot(2,2,1)
     ax2 = fig2.add_subplot(2,2,2)
