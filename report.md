@@ -14,7 +14,19 @@ The reports, codes and supporting documents are to be uploaded to Github at:
 
 Explain your selection criteria here.
 
+Before decided choosing LU method or Sor method to solve this problem, we will check whether matrix A is positive definite or not. If it is positive definite, then we can choose Sor method to solve the problem. To check matrix A is positive definite, we need to see whether it can apply the Cholesky factorization or not. If matrix A cant apply this Cholesky factorization then we would choose LU method to solve this problem.
+
 Explain how you implement your `task1.py` here.
+
+First, for the LU method. We define a function Ludecomp(A) which take in the matrix A, after that we define another function call lu(A,b). It solve the matrix A from Ax=b and return the value (A,b). 
+
+Second, for the Sor method. We need to compute the omega first, so we using the function omegasearch(A,D). This function will find the omega by the formula  omega = 2*(1-np.sqrt(1-eig**2))/eig**2, and the eig is the maximum value of eigenvalue. As we mention above, matrix A must be positive definite. So we set a range of 1< omega < 2 to ensure convergence when it is positive definite.
+
+Thrid, we set the iteration will begin from x(0),zero vector and use this vector to get x(j) until desired iteration. Then, the matrix A and b will move to the sol = np.linalg.solve(A,b) and solve it with the condition. The condition we set is the matrix need to be positive definite matrix, and it can apply the Cholesky factorization. If the condition fulfill, it will use Sor method to solve it else it will using Lu method.
+
+For the result, it give both 3x3 and 6x6 matrices solved by Lu method. The 3x3 matrix given [ 1. 1. 1.] and the 6x6 matrix given [ 1. -1. 4. -3.5 7. -1. ].
+
+
 
 ---------------------------------------------------------
 
