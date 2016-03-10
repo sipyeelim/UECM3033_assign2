@@ -6,7 +6,7 @@ import scipy as sp
 
 def image_svd(n):
     
-    # Keep the none zero elements
+    # Keep first and the none zero elements
     r_a=Sr.copy()
     g_a=Sg.copy()
     b_a=Sb.copy()
@@ -64,7 +64,7 @@ Ug, Sg, Vg = sp.linalg.svd(g)
 #U, sigma and V for blue 
 Ub, Sb, Vb = sp.linalg.svd(b) 
 
-#usd to find the none zero elements in sigma of red, green and blue matrices
+#check the none zero elements in sigma of red, green and blue matrices
 nonezero_r=np.count_nonzero(Sr)
 nonezero_g=np.count_nonzero(Sg)
 nonezero_b=np.count_nonzero(Sb)
