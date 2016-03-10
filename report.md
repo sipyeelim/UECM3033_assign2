@@ -35,11 +35,10 @@ A good resolution of sigma 200
 
 ![resolution_200_image.png](resolution_200_image.png)
 
-Put here your lower and better resolution pictures. Explain how you generate
-these pictures from `task2.py`.
+To generate these pictures, first we need to read the image.jpg into the img that contain 3 matrices which is r, g and b. 
 
 What is a sparse matrix?
-
+Sparse matrix is a matrix that contain the most of zero elements. But if the matrix has the most of nonzero element, then the matrix is considered dense. In this case, we keep the first 30 element of sigma and other set to be zero, this will be forming the sparse matrix. The dimension of the sigma is change to the (800,1000) which will create a large sparse matrix. After that, the sparse matrix will help to create a lower resolution picture when it is using the dot multiplication to combine the U and V.
 
 -----------------------------------
 
