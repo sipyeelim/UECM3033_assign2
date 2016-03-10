@@ -10,6 +10,8 @@ def LUdecomp(A):
                 A[i, k+1:n] = A[i, k+1:n] - lam * A[k, k+1:n]
                 A[i, k] = lam
         return A
+
+#find omega
 def omegasearch(A,D):
     K = np.linalg.inv(D).dot(D-A)
     eig = max(np.linalg.eigvals(K));
