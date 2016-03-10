@@ -6,7 +6,7 @@ import scipy as sp
 
 def image_svd(n):
     
-    # Keep the none zero elements
+    # Keep first and the none zero elements
     r_a=Sr.copy()
     g_a=Sg.copy()
     b_a=Sb.copy()
@@ -30,7 +30,7 @@ def image_svd(n):
     img[:,:,1]= g_new
     img[:,:,2]= b_new
 
-    #Use to plot the images
+    #Use to plot the new images
     fig2 = plt.figure(n)
     ax1 = fig2.add_subplot(2,2,1)
     ax2 = fig2.add_subplot(2,2,2)
@@ -57,14 +57,12 @@ ax3.imshow(g, cmap = 'Greens')
 ax4.imshow(b, cmap = 'Blues')
 plt.show()
 
-#to find U, sigma and V for red 
+#to find U, sigma and V of red, green and blue matrix.
 Ur, Sr, Vr = sp.linalg.svd(r) 
-#to find U, sigma and V for green 
 Ug, Sg, Vg = sp.linalg.svd(g) 
-#U, sigma and V for blue 
 Ub, Sb, Vb = sp.linalg.svd(b) 
 
-#usd to find the none zero elements in sigma of red, green and blue matrices
+#check the none zero elements in sigma of red, green and blue matrices
 nonezero_r=np.count_nonzero(Sr)
 nonezero_g=np.count_nonzero(Sg)
 nonezero_b=np.count_nonzero(Sb)
