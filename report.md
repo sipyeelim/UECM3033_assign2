@@ -27,6 +27,14 @@ Put here your picture file (image.jpg)
 How many non zero element in $\Sigma$?
 All element like red, blue and green in $\Sigma$ are non zero element.
 
+A lower resolution of sigma 30
+
+![resolution_30_image.png](resolution_30_image.png)
+
+A good resolution of sigma 200
+
+![resolution_200_image.png](resolution_200_image.png)
+
 Put here your lower and better resolution pictures. Explain how you generate
 these pictures from `task2.py`.
 
